@@ -131,17 +131,16 @@ console.log(teams);
 
 let newArray = [];
 
-for (var i = 0; i < teams.length; i++) {
+teams.forEach(element => {
 
-    teams[i].score = randomNumber(1, 50);
+    element.score = randomNumber(1, 50);
 
-    teams[i].fouls = randomNumber(1, 50);
+    element.fouls = randomNumber(1, 50);
 
-    let {name, fouls} = teams[i];
+    let {name, fouls} = element;
 
     newArray.push({name, fouls});
-
-}  
+});
 
 console.log(newArray);
 
