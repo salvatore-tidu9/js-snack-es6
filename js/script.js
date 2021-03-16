@@ -6,42 +6,36 @@
 const bikes = [
 
     {
-
         name: "Mountain bike",
 
         weight: 20
     },
 
     {
-
         name: "Downhill",
 
         weight: 30
     },
 
     {
-
         name: "Bmx",
 
         weight: 18
     },
 
     {
-
         name: "Gravel bike",
 
         weight: 25
     },
 
     {
-
         name: "Tandem",
 
         weight: 45
     },
 
     {
-
         name: "Triciclo",
 
         weight: 35
@@ -56,23 +50,16 @@ let weightsList = [];
 bikes.forEach((element) => {
 
     weightsList.push(element.weight);
-
 });
 
 console.log(weightsList);
 
 
-const [b1, b2, b3, b4, b5, b6] = bikes;
+let lighterBike = bikes[weightsList.indexOf(Math.min(...weightsList))];
 
-console.log(b1, b2, b3, b4, b5, b6);
+const {name, weight} = lighterBike;
 
-
-let min = Math.min(...weightsList);
-
-console.log(min);
-
-
-console.log(`La bici più leggera è la ${b3.name} che pesa ${min} Kg`);
+console.log(`La bici più leggera è la ${name} che pesa ${weight} Kg`);
 
 
 // // ---ESERCIZIO_2---
@@ -98,7 +85,7 @@ const teams = [
 
         score : 0,
 
-        fouls : 0
+        fouls :  0
     },
 
     {
@@ -147,5 +134,56 @@ console.log(newArray);
 
 function randomNumber(min, max) {
 
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+// ---ESERCIZIO_3---
+
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+// Usiamo i nuovi metodi degli array foreach o filter.
+
+
+// Esempio_1_filter
+
+
+const mainArray = [1, 2, 3, 4, 5, 6, 7, 8];
+
+
+function genArray(array, a, b) {
+
+    let newArray = array.filter((element) => {
+
+        return element > a && element < b;
+
+    });
+
+    return newArray;
+}
+
+console.log(genArray(mainArray, 1, 6 ));
+
+
+// Esempio_2_forEach
+
+
+const myArray = ["Monitor", "CPU", "Mouse", "Keyboard", "GPU", "RAM", "SSD", "Cable"];
+
+
+function genArray(array, a, b) {
+
+    let newArray = [];
+
+    array.forEach(function(element, index) {
+
+        if (index >= a && index <= b) {
+
+            newArray.push(element);
+        }
+    });
+
+    return newArray;
+}
+
+console.log(genArray(myArray, 1, 6));
