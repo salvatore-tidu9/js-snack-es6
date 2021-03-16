@@ -150,12 +150,14 @@ function randomNumber(min, max) {
 
 const mainArray = [1, 2, 3, 4, 5, 6, 7, 8];
 
+console.log(mainArray);
+
 
 function genArray(array, a, b) {
 
     let newArray = array.filter((element) => {
 
-        return element > a && element < b;
+        return element >= a && element <= b;
 
     });
 
@@ -169,6 +171,8 @@ console.log(genArray(mainArray, 1, 6 ));
 
 
 const myArray = ["Monitor", "CPU", "Mouse", "Keyboard", "GPU", "RAM", "SSD", "Cable"];
+
+console.log(myArray);
 
 
 function genArray(array, a, b) {
