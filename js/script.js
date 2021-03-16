@@ -145,7 +145,7 @@ function randomNumber(min, max) {
 // Usiamo i nuovi metodi degli array foreach o filter.
 
 
-// Esempio_1_filter
+// Esempio_1_filter_(modo_1)
 
 
 const mainArray = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -165,6 +165,33 @@ function genArray(array, a, b) {
 }
 
 console.log(genArray(mainArray, 1, 6 ));
+
+
+// Esempio_1_filter_(modo_2)
+
+
+// const mainArray = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// console.log(mainArray);
+
+
+// function genArray(array, a, b) {
+
+//     let newArray = [];
+
+//     array.filter((element, index) => {
+
+//         if (index >= a && index <= b) {
+
+//             newArray.push(element);
+//         }
+
+//     });
+
+//     return newArray;
+// }
+
+// console.log(genArray(mainArray, 1, 6 ));
 
 
 // Esempio_2_forEach
